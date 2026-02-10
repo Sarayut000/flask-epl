@@ -54,7 +54,7 @@ def info_player(id):
 def update_player(id):
   player = db.session.get(Player, id)
   query = db.select(Club)
-  clubs = db.session.scalars(db.select(query)).all()
+  clubs = db.session.scalars(query).all()
   if request.method == 'POST':
     name = request.form['name']
     position = request.form['position']
