@@ -48,6 +48,10 @@
         <input value="{{player.img}}" name="img" type="text" class="form-control" id="img" required>
       </div>
       <div class="mb-3">
+        <label for="clean_sheet" class="form-label">Clean Sheet</label>
+        <input value="{{player.clean_sheet}}" name="clean_sheet" type="number" class="form-control" id="clean_sheet" required>
+      </div>
+      <div class="mb-3">
         <label for="position" class="form-label">Select Club</label>
         <select name="club_id" class="form-select" aria-label="Default select example">
           {% for club in clubs %}

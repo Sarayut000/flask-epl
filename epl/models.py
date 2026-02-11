@@ -22,9 +22,10 @@ class Player(db.Model):
   name: Mapped[str] = mapped_column(String(50), nullable=False)
   position: Mapped[str] = mapped_column(String(50), nullable=False)
   nationality: Mapped[str] = mapped_column(String(50), nullable=False)
-  goals: Mapped[int] = mapped_column(Integer, default=0)
+  goals: Mapped[int] = mapped_column(Integer, nullable=True)
   squad_no: Mapped[int] = mapped_column(Integer, nullable=True)
   img: Mapped[str] = mapped_column(String(255), nullable=False)
+  clean_sheet: Mapped[int | None] = mapped_column(Integer, nullable=True)
   club_id: Mapped[int] = mapped_column(Integer,ForeignKey('club.id'))
 
 
