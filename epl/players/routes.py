@@ -18,11 +18,14 @@ def new_player():
     name = request.form['name']
     position = request.form['position']
     nationality = request.form['nationality']
-    goals = int(request.form['goals'])
+    goals_input = request.form['goals']
     squad_no = int(request.form['squad_no'])
     img = request.form['img']
     club_id = int(request.form['club_id'])
-    clean_sheet = int(request.form['clean_sheet'])
+    clean_input = request.form['clean_sheet']
+
+    goals = int(goals_input) if goals_input != "0" else None
+    clean_sheet = int(clean_input) if clean_input != "0" else None
 
     player = Player(name=name, position=position, nationality=nationality,
                     goals=goals, squad_no=squad_no, img=img, club_id=club_id, clean_sheet=clean_sheet)
@@ -66,7 +69,7 @@ def update_player(id):
     club_id = int(request.form['club_id'])
     clean_sheet = request.form.get('clean_sheet', type=int)
 
-  
+
     player.name = name
     player.position = position
     player.nationality = nationality
